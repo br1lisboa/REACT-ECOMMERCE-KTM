@@ -1,0 +1,30 @@
+.contenedor-navbar {
+	width: 100%;
+	height: auto;
+	background-color: black;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: gainsboro;
+}
+
+.navbar-itulo {
+	margin-left: 20px;
+	padding: 10px;
+}
+
+.navbar {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+}
+
+.navbar li {
+	padding: 10px;
+	margin-left: 50px;
+	margin-right: 20px;
+	font-style: normal;
+	list-style: none;
+}
+
