@@ -4,7 +4,7 @@ import './styles/ItemList.css'
 
 function ItemList () {
   const [productList, setProductList] = useState([]);
-  console.log(productList);
+  /* console.log(productList); */
 
   useEffect( () => {
     const getProducts = async () => {
