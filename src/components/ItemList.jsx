@@ -6,13 +6,13 @@ function ItemList ( {product} ) {
   return (
     <div className='container-itemlist'>
       <h1>Lista de Productos</h1>
-      <ul>
-        {
+      <div> 
+         {
           product.map(item => (
-            <li key={item.id}>{item.title}</li>
+            <li key={item.id}>{item.title} {item.price} </li>
           ))
-        }
-      </ul>
+        } 
+      </div>
     </div >
   ); 
 }
