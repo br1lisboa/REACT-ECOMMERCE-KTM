@@ -1,30 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import ItemList from '../components/ItemList';
 
 function ItemListContainer () {
-  const [productList, setProductList] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect( () => {
-    setLoading(true);
-    const getProducts = async () => {
-      try {
-        const response = await fetch('https://fakestoreapi.com/products')
-        const data = await response.json();
-        setProductList(data)
-        setLoading(false)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-
-    getProducts();
-  }, []);
 
   return (
-    <>
-      {loading? <h1>Cargando productos..</h1> : <ItemList product={productList}/>}
-    </>
+    <ItemList />
   );
 }
 

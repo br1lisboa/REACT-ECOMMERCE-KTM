@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="container-principal">
       <NavBar />
-      {/* <ItemListContainer /> */}
+      <ItemListContainer />
       <ItemCount />
     </div>
   );
