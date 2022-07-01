@@ -1,5 +1,7 @@
 import React from 'react';
-import './styles/Item.css'
+import ItemCount from './ItemCount';
+import './styles/Item.css';
+
 
 function Item ( {name, imagen, categoria, precio } ) {
   
@@ -12,6 +14,7 @@ function Item ( {name, imagen, categoria, precio } ) {
         <p>Categoria: {categoria} </p>
         <p>Precio {precio} </p>
       </div>
+      <ItemCount />
     </div >
   ); 
 }

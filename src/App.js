@@ -8,7 +8,6 @@ function App() {
     <div className="container-principal">
       <NavBar />
       <ItemListContainer />
-      <ItemCount />
     </div>
   );
 }
