@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import Item from '../components/Item';
+import './styles/ItemList.css'
 
 function ItemList () {
   const [productList, setProductList] = useState([]);
-  const [loading, setLoading] = useState(false);
+  console.log(productList);
 
   useEffect( () => {
-    setLoading(true);
     const getProducts = async () => {
       try {
         const response = await fetch('https://fakestoreapi.com/products')
         const data = await response.json();
         setProductList(data)
-        setLoading(false)
       } catch (error) {
         console.log(error)
       }
@@ -22,9 +21,31 @@ function ItemList () {
   }, []);
 
   return (
-    <>
-      {loading? <h1>Cargando productos..</h1> : <Item product={productList}/>}
-    </>
+    <div className="product-list-container">
+      {
+        productList.length ? ( 
+          <>
+            {
+              productList.map((productList) => {
+                return (
+                  <div key={productList.id} className="generic">
+                    <Item
+                      name={productList.title}
+                      imagen={productList.image}
+                      precio={productList.price}
+                      categoria={productList.category}
+                      id={productList.id}
+                    />
+                  </div>
+                );
+              })
+            }
+          </>
+        ) : (
+          <p>Cargando productos...</p>
+        ) 
+      }
+    </div>
   );
 }
 
