@@ -1,53 +1,23 @@
-import React, { useEffect, useState } from "react";
-import ItemCard from "./ItemCard";
+import React from 'react';
+import './styles/ItemDetail.css'
+import ItemCount from './ItemCount';
 
-const ItemDetail = () => {
-	const [productDetail, setProductDetail] = useState([]);
-	const [loading, setLoading] = useState(false);
-	console.log(productDetail);
+function ItemDetail( {product} ) {
+  console.log(product);
 
-	useEffect( () => {
-		setLoading(true)
-		const getProduct = async () => {
-			try {
-				const response = await fetch('https://fakestoreapi.com/products/1')
-				const data = await response.json();
-				setProductDetail(data)
-				setLoading(false)
-			} catch (error) {
-				console.log(error);
-			}
-		}
-
-		getProduct();
-	}, [])
-
-	return (
-		<div>
-			{
-				loading ? (
-					<>
-						{
-							productDetail.map((productDetail) => {
-								return (
-									<div key={productDetail.id}>
-										<ItemCard 
-											name={productDetail.title}
-											descripcion={productDetail.description}
-											imagen={productDetail.image}
-											precio={productDetail.price}
-										/>
-									</div>
-								);
-							})
-						}
-					</>
-				) : (
-					<h2>Cargando producto...</h2>
-				)
-			}
-		</div>
-	);
+  return (
+    <div className='container-detail'>
+      <div className='d-img'>
+        <img src={product.image} alt="" className='detail-img'/>
+      </div>
+      <div className='d-det'>
+        <h2>{product.title}</h2>
+        <h3>$ {product.price}</h3>
+        <p>{product.description}</p>
+        <ItemCount />
+      </div>
+    </div>
+  )
 }
 
-export default ItemDetail;
+export default ItemDetail

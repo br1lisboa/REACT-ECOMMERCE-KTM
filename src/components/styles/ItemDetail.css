@@ -1,0 +1,28 @@
+.container-detail {
+  width: 60%;
+  height: auto;
+  margin: auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.d-img {
+  height: auto;
+}
+
+.d-det {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.detail-img {
+  width: 100%;
+  height: auto;
+}
