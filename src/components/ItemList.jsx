@@ -1,24 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import Item from '../components/Item';
-import './styles/ItemList.css'
+import './styles/ItemList.css';
+import { useParams } from 'react-router-dom';
+import Loading from './Loading';
 
 function ItemList () {
   const [productList, setProductList] = useState([]);
-  /* console.log(productList); */
+  const params = useParams();
+  console.log(params);
+  
 
   useEffect( () => {
     const getProducts = async () => {
       try {
         const response = await fetch('https://fakestoreapi.com/products')
         const data = await response.json();
-        setProductList(data)
+        let productosFiltrados = [...data];
+        if (params?.categoryId) {
+          productosFiltrados = productosFiltrados.filter(producto => producto.category === params.categoryId)
+        }         /* >>>>> ".?" se llama opcional chaining, significa que si "params" viene undefined NO va a hacer lo que indica el IF */
+        setProductList(productosFiltrados)
       } catch (error) {
         console.log(error)
       }
     }
 
     getProducts();
-  }, []);
+  }, [params]);
 
   return (
     <div className="product-list-container">
@@ -42,7 +50,7 @@ function ItemList () {
             }
           </>
         ) : (
-          <p>Cargando productos...</p>
+          <Loading/>
         ) 
       }
     </div>
