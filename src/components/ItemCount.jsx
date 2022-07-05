@@ -1,28 +1,33 @@
 import React, { useState } from 'react';
 import './styles/ItemCount.css';
 
-const ItemCount = ({ onAdd }) => {
-	const intial = 1;
-	const stock = 10;
+const ItemCount = ({ onConfirm, maxQuantity /* onAdd */ }) => {
+	/* const intial = 1;
+	const stock = 10; */
 
-	const [count, setCount] = useState(intial);
+	const [value, setValue] = useState(1);
 
-	const addProduct = (num) => {
-		setCount(count + num)
+	const handleConfirm = () => {
+		if (value <= maxQuantity) {
+			onConfirm(value)
+		} 
+		else {
+			alert("Value > maxQuantity")
+		}
 	};
 
 	return (
 		<div className="itemcount-container">
 			<div className="itemcount-container-contador">
-				<button className="itemcount-container-buton" onClick={() => addProduct(-1)} disabled={count === intial ? true : null}>
+				<button className="itemcount-container-buton" onClick={() => setValue(value => value-1)}>
 					-
 				</button>
-				<span className="itemcount-container-count"> {count} </span>
-				<button className="itemcount-container-buton" onClick={() => addProduct(+1)} disabled={count === stock ? true : null}>
+				<span className="itemcount-container-count"> {value} </span>
+				<button className="itemcount-container-buton" onClick={() => setValue(value => value+1)}>
 					+
 				</button>
 			</div>
-			<button className="itemcount-container-buttonadd" onClick={() => onAdd(count)} disabled={stock === 0 ? true : null}>
+			<button className="itemcount-container-buttonadd" onClick={handleConfirm}>
 				Añadir al carrito
 			</button>
 		</div>
