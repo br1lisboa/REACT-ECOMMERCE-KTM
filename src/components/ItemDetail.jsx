@@ -31,7 +31,7 @@ function ItemDetail( {product} ) {
         {!qtyAdded ?
           <ItemCount onConfirm={handleConfirm} maxQuantity={product.stock} /> 
           :
-          <button onClick={handleTerminate}>Terminar Compra</button>
+          <button onClick={handleTerminate} className="terminar-compra">Terminar Compra</button>
         }
       </div>
     </div>

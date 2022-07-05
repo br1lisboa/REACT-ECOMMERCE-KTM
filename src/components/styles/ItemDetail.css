@@ -26,3 +26,15 @@
   width: 100%;
   height: auto;
 }
+
+.terminar-compra {
+  width: 40%;
+	height: auto;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	margin-top: 15px;
+	padding: 20px;
+	background-color: black;
+	color: whitesmoke;
+}
