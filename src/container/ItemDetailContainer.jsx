@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
 
   const params = useParams();
 
-  console.log(params);
+  /* console.log(params); */
 
   useEffect(()=> {
     const getProduct = async () => {

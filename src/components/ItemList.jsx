@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { /* useContext, */ useEffect, useState } from 'react';
 import Item from '../components/Item';
 import './styles/ItemList.css';
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
+/* import { Shop } from '../context/ShopProvider'; */
 
 function ItemList () {
   const [productList, setProductList] = useState([]);
   const params = useParams();
-  console.log(params);
+  /* console.log(params); */
   
 
   useEffect( () => {
@@ -28,6 +29,12 @@ function ItemList () {
     getProducts();
   }, [params]);
 
+  /* const {setEstadoA} = useContext(Shop); */
+
+  /* const handleChangeState = () => {
+    setEstadoA('cambio de valor')
+  }; */
+
   return (
     <div className="product-list-container">
       {
@@ -44,6 +51,7 @@ function ItemList () {
                       categoria={productList.category}
                       id={productList.id}
                     />
+                    {/* <button onClick={handleChangeState}>Cambiar estado</button> */}
                   </div>
                 );
               })
