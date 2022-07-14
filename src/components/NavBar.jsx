@@ -20,7 +20,7 @@ function NavBar () {
 				<li><Link to="/category/women's clothing" className=' li'>MUJERES</Link></li>
 				<li><Link to="/category/men's clothing" className=' li'>HOMBRES</Link></li>
 				{/* <li>{estadoA}</li> */}
-				<li><CartWidget /></li>
+				<li><Link to='/cart' className=' li'><CartWidget /></Link></li>
 			</ul>
 		</div>
 		<div>
