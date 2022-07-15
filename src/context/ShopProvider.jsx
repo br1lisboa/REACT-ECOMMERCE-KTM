@@ -40,6 +40,7 @@ const ShopProvider = ({ children }) => {
 		))
 		return total
 	}
+
 	return(
 		<Shop.Provider value={{/* estadoA, setEstadoA, */ addItem, cart, deletItem, clearCart, totalInCart}}>
 			{children}
