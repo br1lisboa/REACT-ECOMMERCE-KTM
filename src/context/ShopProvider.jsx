@@ -9,7 +9,7 @@ const ShopProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 
 	const addItem = (producto, cantidad) => {
-		console.log(producto, cantidad);
+		/* console.log(producto, cantidad ); */
 		const productoRepetido = isInCart(producto);
 		if (productoRepetido) {
 			productoRepetido.quantity += cantidad
@@ -33,8 +33,15 @@ const ShopProvider = ({ children }) => {
 		return cart.find(elemento => elemento.id === producto.id)
 	}
 
+	const totalInCart = () => {
+		let total = 0
+		cart.forEach((producto) => (
+			total = total + (producto.cantidad * producto.price)
+		))
+		return total
+	}
 	return(
-		<Shop.Provider value={{/* estadoA, setEstadoA, */ addItem, cart, deletItem, clearCart}}>
+		<Shop.Provider value={{/* estadoA, setEstadoA, */ addItem, cart, deletItem, clearCart, totalInCart}}>
 			{children}
 		</Shop.Provider>
 	);

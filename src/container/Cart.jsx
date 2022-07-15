@@ -5,15 +5,8 @@ import { Link } from 'react-router-dom';
 
 function Cart() {
   const {cart, deletItem} = useContext(Shop);
-  /* console.log(cart); */
-  /* if (cart.length === 0) {
-    return (
-      <div>
-        <h3>No hay productos en el carrito!</h3>
-        <Link to='/'>Ir al inicio</Link>
-      </div>
-    );
-  }        RETURN TEMPRANO */
+  
+  
 
   return (
     <>
@@ -29,6 +22,7 @@ function Cart() {
             <h3>Producto: {producto.title}</h3>
             <h4>Cantidad: {producto.quantity}</h4>
             <h4>Precio: ${producto.price}</h4>
+            <h4>SubTotal: ${producto.quantity * producto.price}</h4>
             <button onClick={() => deletItem(producto.id)}>DELETE</button>
           </div>)}
       </div>
