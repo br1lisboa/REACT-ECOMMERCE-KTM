@@ -24,7 +24,7 @@ function NavBar () {
 			</ul>
 		</div>
 		<div>
-			<h2 className='navbar-msj'>Compre con tranquilidad..</h2>
+			<h2 className='navbar-msj'>Popurri..la tienda online donde encontrara de todo..</h2>
 		</div>
 		</div>
 	);
