@@ -3,17 +3,21 @@ import { Shop } from '../context/ShopProvider';
 import './styles/Cart.css';
 import { Link } from 'react-router-dom';
 import ordenGenerada from '../utils/generarOrden';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../firebase/config';
 
 
 function Cart() {
   const {cart, deletItem} = useContext(Shop);
 
-  const confirmarOrden = () => {
+  const confirmarOrden = async () => {
     const orden = ordenGenerada("Bruno", "Av. Siempre Viva 745", cart, 4500);
-    console.log(orden);
+    //console.log(orden);
     /* guardarOrden(cart, orden) */
+    //Aca vamos a añadir un nuevo doc autogenerando id.
+    const docRef = await addDoc(collection(db, 'orders'), orden)
+    console.log('Document written whith ID: ', docRef.id);
   }
-  
   
 
   return (
@@ -24,16 +28,16 @@ function Cart() {
         <Link to='/'>Ir al inicio</Link>
       </div>
       :
-      <div>
+      <div className='container-ci'>
         {cart.map(producto => 
           <div className='cartitem-container' key={producto.id}>
             <h3>Producto: {producto.title}</h3>
             <h4>Cantidad: {producto.quantity}</h4>
             <h4>Precio: ${producto.price}</h4>
             <h4>SubTotal: ${producto.quantity * producto.price}</h4>
-            <button onClick={() => deletItem(producto.id)}>DELETE</button>
+            <button className='buton-delete' onClick={() => deletItem(producto.id)}>DELETE</button>
           </div>)}
-          <button onClick={confirmarOrden}>Confirmar Orden</button>
+          <button className='buton-confirm' onClick={confirmarOrden}>Confirmar Orden</button>
       </div>
     }
     </>
