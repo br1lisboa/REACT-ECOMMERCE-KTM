@@ -2,9 +2,17 @@ import React, { useContext } from 'react';
 import { Shop } from '../context/ShopProvider';
 import './styles/Cart.css';
 import { Link } from 'react-router-dom';
+import ordenGenerada from '../utils/generarOrden';
+
 
 function Cart() {
   const {cart, deletItem} = useContext(Shop);
+
+  const confirmarOrden = () => {
+    const orden = ordenGenerada("Bruno", "Av. Siempre Viva 745", cart, 4500);
+    console.log(orden);
+    /* guardarOrden(cart, orden) */
+  }
   
   
 
@@ -25,6 +33,7 @@ function Cart() {
             <h4>SubTotal: ${producto.quantity * producto.price}</h4>
             <button onClick={() => deletItem(producto.id)}>DELETE</button>
           </div>)}
+          <button onClick={confirmarOrden}>Confirmar Orden</button>
       </div>
     }
     </>
