@@ -2,10 +2,6 @@ import { addDoc, collection, doc, getDoc, writeBatch } from "firebase/firestore"
 import { db } from "../firebase/config"
 
 const guardarOrden = (cart, orden) => {
-    console.log("Guardar orden");
-    console.log(cart);
-    console.log(orden);
-    
     //Primer paso: abrir un batch
     const batch = writeBatch(db)
     

@@ -16,8 +16,6 @@ function ItemDetail( {product} ) {
     setQtyAdded(qty);
   };
   
-  /* console.log(qtyAdded); */
-
   const handleTerminate = () => {
     addItem(product, qtyAdded)
     navigate('/cart')

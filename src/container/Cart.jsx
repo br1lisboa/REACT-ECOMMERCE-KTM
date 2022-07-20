@@ -3,21 +3,16 @@ import { Shop } from '../context/ShopProvider';
 import './styles/Cart.css';
 import { Link } from 'react-router-dom';
 import ordenGenerada from '../utils/generarOrden';
-/* import { addDoc, collection } from 'firebase/firestore';
-import { db } from '../firebase/config'; */
 import guardarOrden from '../utils/guardaOrden';
 
 
 function Cart() {
+  
   const {cart, deletItem} = useContext(Shop);
 
   const confirmarOrden = async () => {
     const orden = ordenGenerada("Bruno", "Av. Siempre Viva 745", cart, 4500);
-    //console.log(orden);
     guardarOrden(cart, orden)
-    //Aca vamos a añadir un nuevo doc autogenerando id.
-    /* const docRef = await addDoc(collection(db, 'orders'), orden)
-    console.log('Document written whith ID: ', docRef.id); */
   }
   
 

@@ -1,13 +1,13 @@
 import React from 'react';
-import './styles/Item.css';
 import { useNavigate } from 'react-router-dom';
+import './styles/Item.css';
 
 
 function Item ( { name, imagen, categoria, precio, id } ) {
+  
   const navigation = useNavigate();
 
-  const handleDetail = () => {
-  /*   console.log('Navega hacia el detail'); */
+  const handleDetail = () => { //Navega hacia el detail
     navigation(`/detail/${id}`)
   }
 

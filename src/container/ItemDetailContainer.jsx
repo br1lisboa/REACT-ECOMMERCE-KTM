@@ -6,11 +6,10 @@ import { doc, getDoc } from "firebase/firestore";
 import { db } from '../firebase/config';
 
 const ItemDetailContainer = () => {
+
   const [productDetail, setProductDetail] = useState({});
 
   const params = useParams();
-
-  /* console.log(params); */
 
   useEffect(()=> {
     const getProduct = async () => {
@@ -25,14 +24,8 @@ const ItemDetailContainer = () => {
           const productDetail = {id: docSnap.id, ...docSnap.data()}
           setProductDetail(productDetail)
         } else {
-          // doc.data() will be undefined in this case
           console.log("No such document!");
         }
-
-
-        /* const response = await fetch(`https://fakestoreapi.com/products/${params.productId}`);
-        const data = await response.json();
-        setProductDetail(data)  */
       } catch (error) {
         console.log(error);
       }
