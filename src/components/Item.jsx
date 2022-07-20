@@ -13,11 +13,13 @@ function Item ( { name, imagen, categoria, precio, id } ) {
 
   return (
     <div className='product-card-container' onClick={handleDetail}>
+      <div className='img-car-container'>
+        <img src={imagen} alt="" className="img-car" />
+      </div>
       <div className="product-car">
         <h3> {name} </h3>
-        <img src={imagen} alt="" className="img-car" />
-        <p>Categoria: {categoria} </p>
-        <p>Precio {precio} </p>
+        <p>Marca: {categoria} </p>
+        <p>Precio: $$ {precio} USD </p>
       </div>
     </div >
   ); 

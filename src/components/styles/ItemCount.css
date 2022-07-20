@@ -16,7 +16,7 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	margin: 3px;
+	margin: 10px;
 	padding: 20px;
 	background-color: black;
 	color: whitesmoke;
@@ -33,7 +33,7 @@
 }
 
 .itemcount-container-buttonadd {
-	width: 100%;
+	width: 80%;
 	height: 40px;
 	cursor: pointer;
 	display: flex;

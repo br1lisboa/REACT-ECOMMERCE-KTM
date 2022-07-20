@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import Modal from './Modal';
+/* import Modal from './Modal'; */
 import './styles/ItemCount.css';
 
-const ItemCount = ({ onConfirm, maxQuantity /* onAdd */ }) => {
-	/* const intial = 1;
-	const stock = 10; */
+const ItemCount = ({ onConfirm, maxQuantity}) => {
 
 	const [value, setValue] = useState(1);
-	const [openModal, setOpenModal] = useState(false);
+	/* const [openModal, setOpenModal] = useState(false); */
 
 	const handleConfirm = () => {
 		if (value <= maxQuantity) {
@@ -30,12 +28,12 @@ const ItemCount = ({ onConfirm, maxQuantity /* onAdd */ }) => {
 				</button>
 			</div>
 			<button className="itemcount-container-buttonadd" onClick={handleConfirm}>
-				Añadir al carrito
+				Añadir al Carro
 			</button>
-			<button onClick={()=>{setOpenModal(true)}}>
+			{/* <button onClick={()=>{setOpenModal(true)}}>
 				Modal
 			</button>
-			<Modal open={openModal} onClose={()=>{setOpenModal(false)}}/>
+			<Modal open={openModal} onClose={()=>{setOpenModal(false)}}/> */}
 		</div>
 	);
 }

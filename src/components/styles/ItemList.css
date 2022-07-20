@@ -1,9 +1,9 @@
 .product-list-container {
-    width: 100%;
+    width: 90%;
     height: auto;
-    padding: 30px 130px 30px 130px;
+/*     padding: 30px 130px 30px 130px; */
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -14,5 +14,5 @@
     align-items: center;
     flex-direction: column;
     width: 350px;
-    height: 650px;
+    height: 450px;
 }

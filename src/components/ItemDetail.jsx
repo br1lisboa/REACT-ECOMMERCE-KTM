@@ -28,7 +28,7 @@ function ItemDetail( {product} ) {
       </div>
       <div className='d-det'>
         <h2>{product.title}</h2>
-        <h3>$ {product.price}</h3>
+        <h3>Precio: $ {product.price} USD</h3>
         <p>{product.description}</p>
         {!qtyAdded ?
           <ItemCount onConfirm={handleConfirm} maxQuantity={product.stock} /> 
