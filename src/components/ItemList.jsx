@@ -3,7 +3,7 @@ import Item from '../components/Item';
 import './styles/ItemList.css';
 import { useParams } from 'react-router-dom';
 import Loading from './Loading';
-/* import algoritmoGuardadoAutomatico from '../utils/guardarProductos'; */
+//import algoritmoGuardadoAutomatico from '../utils/guardarProductos';
 import { collection, query, getDocs } from "firebase/firestore";
 import { db } from '../firebase/config';
 /* import { Shop } from '../context/ShopProvider'; */
@@ -17,24 +17,26 @@ function ItemList () {
   useEffect( () => {
     const getProducts = async () => {
       try {
-        //algoritmoGuardadoAutomatico()
-        const q = query(collection(db, "products"));
-        const querySnapshot = await getDocs(q);
-        const productos = []
-        querySnapshot.forEach((doc) => {
-          //doc.data() is never undefined for query doc snapshots
-          //console.log(doc.id, " => ", doc.data());
-          productos.push({id: doc.id, ...doc.data()})
-        });
-        console.log(productos);
+        //algoritmoGuardadoAutomatico() >> Funcion para cargar productos programaticamente
+                    
+                    const q = query(collection(db, "products"));
+                    const querySnapshot = await getDocs(q);
+                    const productos = []
+                    querySnapshot.forEach((doc) => {
+                      //doc.data() is never undefined for query doc snapshots
+                      //console.log(doc.id, " => ", doc.data());
+                      productos.push({id: doc.id, ...doc.data()})
+                    });
+                    console.log(productos);
 
         //const response = await fetch('https://fakestoreapi.com/products')
         //const data = await response.json();
-        let productosFiltrados = [...productos];
-        if (params?.categoryId) {
-          productosFiltrados = productosFiltrados.filter(producto => producto.category === params.categoryId)
-        }          /* >>>>> ".?" se llama opcional chaining, significa que si "params" viene undefined NO va a hacer lo que indica el IF */
-        setProductList(productosFiltrados)
+        
+                    let productosFiltrados = [...productos];
+                    if (params?.categoryId) {
+                      productosFiltrados = productosFiltrados.filter(producto => producto.category === params.categoryId)
+                    }          // >>>>> ".?" se llama opcional chaining, significa que si "params" viene undefined NO va a hacer lo que indica el IF
+                    setProductList(productosFiltrados)
       } catch (error) {
         console.log(error)
       }
