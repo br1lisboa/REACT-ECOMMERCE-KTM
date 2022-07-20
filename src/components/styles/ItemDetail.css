@@ -55,4 +55,6 @@
 	background-color: black;
 	color: whitesmoke;
   cursor: pointer;
+  margin: 30px;
+  font-size: 18px;
 }
