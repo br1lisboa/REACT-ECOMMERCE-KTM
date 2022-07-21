@@ -10,22 +10,32 @@ const ItemCount = ({ onConfirm, maxQuantity}) => {
 	const handleConfirm = () => {
 		if (value <= maxQuantity) {
 			onConfirm(value)
-			console.log(value);
-			console.log(maxQuantity);
 		} 
 		else {
 			alert("Value > maxQuantity")
 		}
 	};
 
+	const handleAdd = () => {
+		if (value < maxQuantity) {
+			setValue (value + 1)
+		}
+	}
+
+	const handleSubstract = () => {
+		if (value > 0) {
+			setValue (value - 1)
+		}
+	}
+
 	return (
 		<div className="itemcount-container">
 			<div className="itemcount-container-contador">
-				<button className="itemcount-container-buton" onClick={() => setValue(value => value-1)}>
+				<button className="itemcount-container-buton" onClick={handleSubstract}>
 					-
 				</button>
 				<span className="itemcount-container-count"> {value} </span>
-				<button className="itemcount-container-buton" onClick={() => setValue(value => value+1)}>
+				<button className="itemcount-container-buton" onClick={handleAdd}>
 					+
 				</button>
 			</div>
