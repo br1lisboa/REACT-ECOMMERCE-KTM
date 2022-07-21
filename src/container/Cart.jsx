@@ -27,13 +27,16 @@ function Cart() {
       <div className='container-ci'>
         {cart.map(producto => 
           <div className='cartitem-container' key={producto.id}>
-            <h3>Producto: {producto.title}</h3>
-            <h4>Cantidad: {producto.quantity}</h4>
-            <h4>Precio: ${producto.price}</h4>
-            <h4>SubTotal: ${producto.quantity * producto.price}</h4>
-            <button className='buton-delete' onClick={() => deletItem(producto.id)}>DELETE</button>
+            <div className='cartitem-detail'>
+              <h3>Producto: {producto.title}</h3>
+              <h4>Cantidad: {producto.quantity}</h4>
+              <h4>Precio: ${producto.price}</h4>
+              <h4>SubTotal: ${producto.quantity * producto.price}</h4>
+              <button className='buton-delete' onClick={() => deletItem(producto.id)}>Eliminar producto</button>
+            </div>
+            <img className='img-detail-cart' src={producto.image} alt="imagen de la compra" />
           </div>)}
-          <button className='buton-confirm' onClick={confirmarOrden}>Confirmar Orden</button>
+          <button className='buton-confirm' onClick={confirmarOrden}>CONFIRMAR ORDEN</button>
       </div>
     }
     </>

@@ -1,6 +1,6 @@
 .container-detail {
   width: 80%;
-  height: 50vh;
+  height: auto;
   margin: auto;
   margin-top: 20px;
   display: flex;
@@ -10,12 +10,12 @@
 }
 
 .d-img {
-  width: 30%;
+  width: 35%;
   height: auto;
 }
 
 .d-det {
-  width: 70%;
+  width: 65%;
   height: auto;
   display: flex;
   flex-direction: column;
@@ -45,13 +45,12 @@
 }
 
 .terminar-compra {
-  width: 40%;
+  width: 300px;
 	height: auto;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	margin-top: 15px;
-	padding: 20px;
+	padding: 15px;
 	background-color: black;
 	color: whitesmoke;
   cursor: pointer;
