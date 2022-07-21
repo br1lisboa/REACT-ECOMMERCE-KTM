@@ -4,7 +4,7 @@ import './styles/Footer.css';
 function Footer() {
   return (
     <div className='footer-container'>
-        <p>Diseñado por br1Lis</p>
+        <p>@2021, Lisboa Bruno - Derechos reservados.</p>
     </div>
   )
 }
