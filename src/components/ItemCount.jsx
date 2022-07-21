@@ -10,6 +10,8 @@ const ItemCount = ({ onConfirm, maxQuantity}) => {
 	const handleConfirm = () => {
 		if (value <= maxQuantity) {
 			onConfirm(value)
+			console.log(value);
+			console.log(maxQuantity);
 		} 
 		else {
 			alert("Value > maxQuantity")

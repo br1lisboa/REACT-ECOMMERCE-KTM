@@ -9,7 +9,7 @@ function ItemDetail( {product} ) {
 
   const navigate = useNavigate();
 
-  product.stock = 10;
+  /* product.stock = 10; */
   const [qtyAdded, setQtyAdded] = useState(0);
   
   const handleConfirm = (qty) => {
@@ -40,4 +40,4 @@ function ItemDetail( {product} ) {
   )
 }
 
-export default ItemDetail
+export default ItemDetail;
