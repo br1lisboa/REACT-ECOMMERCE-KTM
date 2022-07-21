@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import ordenGenerada from '../utils/generarOrden';
 import guardarOrden from '../utils/guardaOrden';
 
-
 function Cart() {
   
   const {cart, deletItem} = useContext(Shop);
@@ -14,7 +13,7 @@ function Cart() {
     const orden = ordenGenerada("Bruno", "Av. Siempre Viva 745", cart, 4500);
     guardarOrden(cart, orden)
   }
-  
+
 
   return (
     <>
