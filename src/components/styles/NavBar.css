@@ -6,6 +6,10 @@
 	justify-content: space-between;
 	align-items: center;
 	color: gainsboro;
+	transition: 0.5s ease;
+	position: sticky;
+	top: 0;
+	left: 0;
 }
 
 .navbar {
@@ -13,6 +17,7 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	transition: 0.5s ease;
 }
 
 li {
@@ -21,11 +26,20 @@ li {
 	margin-right: 20px;
 	font-style: normal;
 	list-style: none;
+	transition: 0.5s ease;
+	letter-spacing: 2px;
+	font-size: 24px;
+}
+
+li:hover, 
+.li:hover {
+	color: #E74C2B;
 }
 
 .li {
 	color: whitesmoke;
 	text-decoration: none;
+	transition: 0.5s ease;
 }
 
 .navbar-msj {

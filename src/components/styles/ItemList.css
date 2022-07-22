@@ -5,6 +5,8 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .generic {

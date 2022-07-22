@@ -5,8 +5,8 @@
 	flex-direction: column;
 	width: 300px;
 	height: auto;
-	margin: 30px;
-	padding: 20px;
+	margin: 20px;
+	padding: 5px;
 }
 
 .itemcount-container-contador {
@@ -19,6 +19,8 @@
 	padding: 20px;
 	background-color: black;
 	color: whitesmoke;
+	border-radius: 2%;
+	border: black 1px solid;
 }
 
 .itemcount-container-buton {

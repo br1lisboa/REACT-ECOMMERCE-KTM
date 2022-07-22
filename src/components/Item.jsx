@@ -19,7 +19,7 @@ function Item ( { name, imagen, categoria, precio, id } ) {
       <div className="product-car">
         <h3> {name} </h3>
         <p>Marca: {categoria} </p>
-        <p>Precio: $$ {precio} USD </p>
+        <p className='price'>$ {precio} USD <span className='price-off'> 20%off </span></p>
       </div>
     </div >
   ); 
