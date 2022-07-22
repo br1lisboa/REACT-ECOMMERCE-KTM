@@ -8,9 +8,9 @@ function CartWidget () {
 
 
   return (
-    <div>
+    <div className='container-bag'>
       <div className='navbar-bag'><BsBag/></div>
-      {cart.length && <span>({cart.length})</span>}
+      {cart.length && <span className='bag-number'>{cart.length}</span>}
     </div>
   );
 }

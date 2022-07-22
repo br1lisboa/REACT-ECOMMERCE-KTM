@@ -1,8 +1,8 @@
 .container-detail {
-  width: 60%;
-  height: auto;
+  width: 80%;
+  height: 70vh;
   margin: auto;
-  margin-top: 40px;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -10,16 +10,33 @@
 }
 
 .d-img {
+  width: 35%;
   height: auto;
 }
 
 .d-det {
-  height: 100%;
+  width: 65%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+
+.d-det h2 {
+  margin: 20px;
+  font-size: 35px;
+}
+
+.d-det h3 {
+  margin-bottom: 15px;
+  color: red;
+}
+
+.d-det p {
+  text-align: justify;
+  width: 90%;
 }
 
 .detail-img {
@@ -28,14 +45,15 @@
 }
 
 .terminar-compra {
-  width: 40%;
+  width: 300px;
 	height: auto;
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	margin-top: 15px;
-	padding: 20px;
+	padding: 15px;
 	background-color: black;
 	color: whitesmoke;
   cursor: pointer;
+  margin: 30px;
+  font-size: 18px;
 }
