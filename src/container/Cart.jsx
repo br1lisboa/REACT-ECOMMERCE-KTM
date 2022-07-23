@@ -64,7 +64,7 @@ function Cart() {
           <button className='buton-confirm' onClick={confirmarOrden}>CONFIRMAR ORDEN</button>
           
           <input type="text" placeholder='Nombre' name='name' ref={nameRef}/>
-          <input type="text" placeholder='Apellido' surName='surname' ref={surNameRef}/>
+          <input type="text" placeholder='Apellido' surname='surname' ref={surNameRef}/>
           <input type="text" placeholder='Correo Electronico' mail='mail' ref={mailRef}/>
           <input type="text" placeholder='Direccion' addres='addres' ref={addresRef}/>
           <input type="number" placeholder='Celular' cel='cel' ref={celRef}/>
