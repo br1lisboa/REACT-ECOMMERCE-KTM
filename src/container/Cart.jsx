@@ -4,6 +4,7 @@ import './styles/Cart.css';
 import { Link } from 'react-router-dom';
 import ordenGenerada from '../utils/generarOrden';
 import guardarOrden from '../utils/guardaOrden';
+import Form from '../components/Form';
 
 
 function Cart() {
@@ -50,11 +51,13 @@ function Cart() {
               <img className='img-detail-cart' src={producto.image} alt="imagen de la compra" />
           </div>)}
           
-          <input type="text" placeholder='Nombre' name='name' ref={nameRef}/>
+          {/* <input type="text" placeholder='Nombre' name='name' ref={nameRef}/>
           <input type="text" placeholder='Apellido' surname='surname' ref={surNameRef}/>
           <input type="text" placeholder='Correo Electronico' mail='mail' ref={mailRef}/>
           <input type="text" placeholder='Direccion' addres='addres' ref={addresRef}/>
-          <input type="number" placeholder='Celular' cel='cel' ref={celRef}/>
+          <input type="number" placeholder='Celular' cel='cel' ref={celRef}/> */}
+
+          <Form />
           
           <button className='buton-confirm' onClick={confirmarOrden}>CONFIRMAR ORDEN</button>
           
