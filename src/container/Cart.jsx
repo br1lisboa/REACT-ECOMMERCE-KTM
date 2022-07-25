@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import ordenGenerada from '../utils/generarOrden';
 import guardarOrden from '../utils/guardaOrden';
 
+
 function Cart() {
   
   const {cart, deletItem} = useContext(Shop);
@@ -16,9 +17,6 @@ function Cart() {
   const celRef = useRef();
 
   const confirmarOrden = async () => {
-
-
-
     const orden = ordenGenerada(
       {name: nameRef.current.value}, 
       {apellido: surNameRef.current.value},
@@ -27,16 +25,6 @@ function Cart() {
       {cel: celRef.current.value}, 
       cart,
       4500);
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     guardarOrden(cart, orden)
   }
 
@@ -61,13 +49,17 @@ function Cart() {
             </div>
               <img className='img-detail-cart' src={producto.image} alt="imagen de la compra" />
           </div>)}
-          <button className='buton-confirm' onClick={confirmarOrden}>CONFIRMAR ORDEN</button>
           
           <input type="text" placeholder='Nombre' name='name' ref={nameRef}/>
           <input type="text" placeholder='Apellido' surname='surname' ref={surNameRef}/>
           <input type="text" placeholder='Correo Electronico' mail='mail' ref={mailRef}/>
           <input type="text" placeholder='Direccion' addres='addres' ref={addresRef}/>
           <input type="number" placeholder='Celular' cel='cel' ref={celRef}/>
+          
+          <button className='buton-confirm' onClick={confirmarOrden}>CONFIRMAR ORDEN</button>
+          
+          
+
 
       </div>
     }
