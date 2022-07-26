@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './styles/ItemCount.css';
+import Swal from 'sweetalert2';
 
-const ItemCount = ({ onConfirm, maxQuantity /* onAdd */ }) => {
-	/* const intial = 1;
-	const stock = 10; */
+const ItemCount = ({ onConfirm, maxQuantity}) => {
 
 	const [value, setValue] = useState(1);
 
@@ -12,20 +11,30 @@ const ItemCount = ({ onConfirm, maxQuantity /* onAdd */ }) => {
 			onConfirm(value)
 		} 
 		else {
-			alert("Value > maxQuantity")
+			Swal.fire({
+				icon: 'alert',
+				title: 'Ups, lamentamos el incoveniente.',
+				text: 'Producto fuera de stock'
+			});
 		}
 	};
 
 	const handleAdd = () => {
-		if ( value < maxQuantity) {
-			setValue(value + 1)
+		if (value < maxQuantity) {
+			setValue (value + 1)
+		}
+	}
+
+	const handleSubstract = () => {
+		if (value > 0) {
+			setValue (value - 1)
 		}
 	}
 
 	return (
 		<div className="itemcount-container">
 			<div className="itemcount-container-contador">
-				<button className="itemcount-container-buton" onClick={() => setValue(value => value-1)}>
+				<button className="itemcount-container-buton" onClick={handleSubstract}>
 					-
 				</button>
 				<span className="itemcount-container-count"> {value} </span>
@@ -34,7 +43,7 @@ const ItemCount = ({ onConfirm, maxQuantity /* onAdd */ }) => {
 				</button>
 			</div>
 			<button className="itemcount-container-buttonadd" onClick={handleConfirm}>
-				Añadir al carrito
+				AÑADIR AL CARRITO
 			</button>
 		</div>
 	);

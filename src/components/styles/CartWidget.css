@@ -1,6 +1,18 @@
+.container-bag {
+    display: flex;
+    width: 50px;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .navbar-bag {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.3rem;
+}
+
+.bag-number {
+    color: red;
+    border-bottom: 1px solid red;
 }

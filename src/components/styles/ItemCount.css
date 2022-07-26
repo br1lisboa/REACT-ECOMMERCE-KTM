@@ -1,13 +1,12 @@
 .itemcount-container {
-	/* border: 1px solid black; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	width: 300px;
 	height: auto;
-	margin: 30px;
-	padding: 20px;
+	margin: 20px;
+	padding: 5px;
 }
 
 .itemcount-container-contador {
@@ -16,10 +15,12 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	margin: 3px;
+	margin: 10px;
 	padding: 20px;
 	background-color: black;
 	color: whitesmoke;
+	border-radius: 2%;
+	border: black 1px solid;
 }
 
 .itemcount-container-buton {
@@ -33,7 +34,7 @@
 }
 
 .itemcount-container-buttonadd {
-	width: 100%;
+	width: 80%;
 	height: 40px;
 	cursor: pointer;
 	display: flex;

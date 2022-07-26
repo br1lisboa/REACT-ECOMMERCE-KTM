@@ -1,23 +1,23 @@
 .contenedor-navbar {
 	width: 100%;
-	height: auto;
+	height: 8vh;
 	background-color: black;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	color: gainsboro;
-}
-
-.navbar-itulo {
-	margin-left: 20px;
-	padding: 10px;
+	transition: 0.5s ease;
+	position: sticky;
+	top: 0;
+	left: 0;
 }
 
 .navbar {
 	display: flex;
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 	width: 100%;
+	transition: 0.5s ease;
 }
 
 li {
@@ -26,11 +26,20 @@ li {
 	margin-right: 20px;
 	font-style: normal;
 	list-style: none;
+	transition: 0.5s ease;
+	letter-spacing: 2px;
+	font-size: 24px;
+}
+
+li:hover, 
+.li:hover {
+	color: #E74C2B;
 }
 
 .li {
 	color: whitesmoke;
 	text-decoration: none;
+	transition: 0.5s ease;
 }
 
 .navbar-msj {
@@ -41,4 +50,9 @@ li {
 	width: 100%;
 	height: 20%;
 	padding-top: 35px;
+}
+
+.baner {
+	width: 100%;
+	height: 60vh;
 }

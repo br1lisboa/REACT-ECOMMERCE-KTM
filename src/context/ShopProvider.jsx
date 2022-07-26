@@ -4,12 +4,9 @@ export const Shop = createContext(); /* >>>Hay que exportar tambien el contexto 
 
 const ShopProvider = ({ children }) => {
 
-	/* const [estadoA, setEstadoA] = useState('Este es el valor por defecto') */
-
 	const [cart, setCart] = useState([]);
 
 	const addItem = (producto, cantidad) => {
-		/* console.log(producto, cantidad ); */
 		const productoRepetido = isInCart(producto);
 		if (productoRepetido) {
 			productoRepetido.quantity += cantidad
@@ -17,7 +14,6 @@ const ShopProvider = ({ children }) => {
 		} else {
 			setCart([...cart, {...producto, quantity: cantidad}])
 		}
-		//Esta funcion va a agregar un item al carrito.
 	}
 
 	const deletItem = (id) => {
@@ -36,13 +32,13 @@ const ShopProvider = ({ children }) => {
 	const totalInCart = () => {
 		let total = 0
 		cart.forEach((producto) => (
-			total = total + (producto.cantidad * producto.price)
+			total = total + (producto.quantity * producto.price)
 		))
 		return total
 	}
 
 	return(
-		<Shop.Provider value={{/* estadoA, setEstadoA, */ addItem, cart, deletItem, clearCart, totalInCart}}>
+		<Shop.Provider value={{addItem, cart, deletItem, clearCart, totalInCart}}>
 			{children}
 		</Shop.Provider>
 	);
