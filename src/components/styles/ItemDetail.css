@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  border: solid 1px #EAEAEA;
+  border: #CECDCD solid 0.7px;
   border-radius: 2%;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
 }
@@ -17,7 +17,7 @@
 .d-img {
   width: 35%;
   height: auto;
-  border-right: 3px solid #EAEAEA;
+  border-right: #CECDCD solid 0.7px;
 }
 
 .d-det {
@@ -49,8 +49,9 @@
 .d-det p {
   text-align: justify;
   width: 90%;
-  border-top: #EAEAEA solid 2px;
+  border-top: #CECDCD solid 0.7px;
   padding: 5px;
+  padding-top: 15px;
 }
 
 .detail-img {
@@ -77,4 +78,10 @@
   cursor: pointer;
   margin: 30px;
   font-size: 18px;
+}
+
+.gray-details {
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #5F5958;
 }

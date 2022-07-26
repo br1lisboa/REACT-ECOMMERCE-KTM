@@ -32,7 +32,7 @@ const ShopProvider = ({ children }) => {
 	const totalInCart = () => {
 		let total = 0
 		cart.forEach((producto) => (
-			total = total + (producto.cantidad * producto.price)
+			total = total + (producto.quantity * producto.price)
 		))
 		return total
 	}

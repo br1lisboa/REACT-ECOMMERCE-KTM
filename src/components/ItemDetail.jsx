@@ -27,14 +27,14 @@ function ItemDetail( {product} ) {
         <img src={product.image} alt="" className='detail-img'/>
       </div>
       <div className='d-det'>
-        <h2>{product.title}</h2>
-        <h3>$ {product.price} USD</h3>
-        <p>{product.description}</p>
+        <h2><span className='gray-details'>Producto:</span> {product.title}</h2>
+        <h3><span className='gray-details'>Valor: </span>$ {product.price} USD</h3>
+        <p><span className='gray-details'>Conocela un poco mas ...</span> {product.description}</p>
         <div className='container-bying'>  
         {!qtyAdded ?
           <ItemCount onConfirm={handleConfirm} maxQuantity={product.stock} /> 
           :
-          <button onClick={handleTerminate} className="terminar-compra">Terminar Compra</button>
+          <button onClick={handleTerminate} className="terminar-compra">CONTINUAR AL CARRITO</button>
         }
         </div>
       </div>

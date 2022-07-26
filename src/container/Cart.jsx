@@ -25,13 +25,7 @@ function Cart() {
       },
     });
 
-  const { cart, deletItem } = useContext(Shop);
-
-  /* const nameRef = useRef();
-  const mailRef = useRef();
-  const repeatMailRef = useRef();
-  const telRef = useRef();
- */
+  const { cart, deletItem, clearCart, totalInCart } = useContext(Shop);
 
   const confirmarOrden = async () => {
     const orden = ordenGenerada(
@@ -40,9 +34,10 @@ function Cart() {
       { repeatEmail: values.repeatEmail },
       { tel: values.tel },
       cart,
-      4500
+      totalInCart()
     );
     guardarOrden(cart, orden);
+    clearCart()
   };
 
   return (
@@ -54,12 +49,13 @@ function Cart() {
         </div>
       ) : (
         <div className="container-ci">
+          <h3 className="gray-details"> Detalles de la compra</h3>
           {cart.map((producto) => (
             <div className="cartitem-container" key={producto.id}>
               <div className="cartitem-detail">
                 <h3>
                   {" "}
-                  {producto.title} <span> producto </span>
+                  {producto.title} 
                 </h3>
                 <h4>Cantidad: {producto.quantity}</h4>
                 <h4>Precio: ${producto.price}</h4>
@@ -78,11 +74,14 @@ function Cart() {
               />
             </div>
           ))}
+          <div>
+            <p className="total-compra">Total de la compra: {totalInCart()}</p>
+          </div>
 
           <div className="form-full" >
-            <h4>Rellena los datos para finalizar la compra</h4>
+            <h4 className="form-title">Rellena los datos para finalizar la compra</h4>
             <form className="form-container" onSubmit={handleSubmit}>
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name" className="form-solit">Nombre y apellido</label>
               <input
                 type="text"
                 name="name"
@@ -97,7 +96,7 @@ function Cart() {
                 )}
               </div>
 
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email" className="form-solit">Email</label>
               <input
                 type="email"
                 name="email"
@@ -112,7 +111,7 @@ function Cart() {
                 )}
               </div>
 
-              <label htmlFor="repeatEmail">Repetir email</label>
+              <label htmlFor="repeatEmail" className="form-solit">Repetir email</label>
               <input
                 type="email"
                 name="repeatEmail"
@@ -129,7 +128,7 @@ function Cart() {
                 )}
               </div>
 
-              <label htmlFor="tel">Celular</label>
+              <label htmlFor="tel" className="form-solit">Celular</label>
               <input
                 type="tel"
                 name="tel"
