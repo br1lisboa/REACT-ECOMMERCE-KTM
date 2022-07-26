@@ -1,8 +1,13 @@
 import { addDoc, collection, doc, getDoc, writeBatch } from "firebase/firestore"
 import { db } from "../firebase/config"
+import Swal from 'sweetalert2';
 
-const guardarOrden = (cart, orden) => {
+
+
+const guardarOrden = (cart, orden, clearCart, totalInCart) => {
     //Primer paso: abrir un batch
+    
+    
     const batch = writeBatch(db)
     
     //Array auxiliar que me define si hay productos fuera de stock
@@ -30,7 +35,12 @@ const guardarOrden = (cart, orden) => {
                 addDoc(collection(db, 'orders'), orden).then(({ id }) => {
                     //Recién hacemos el commit una vez que se genera la order
                     batch.commit().then(() => {
-                        alert("Se genero la order con id: " + id)
+                        //clearCart()
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Gracias por tu compra! Revisa tu casilla de correos para continuar.',
+                            text: 'ID de su compra: ' + id,
+                        });
                     })
                 }).catch((err) => {
                     console.log(`Error: ${err.message}`);
@@ -42,6 +52,10 @@ const guardarOrden = (cart, orden) => {
                     mensaje += `${producto.title}`
                 }
                 alert(`Productos fuera de stock: ${mensaje}`)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Acaban de comprar la ultima unidad!',
+                });
             }
         })
     })

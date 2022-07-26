@@ -14,13 +14,10 @@ const ItemDetailContainer = () => {
   useEffect(()=> {
     const getProduct = async () => {
       try {
-        //llamo a la referencia del documento
         const docRef = doc(db, "products", params.productId);
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
-          //console.log(docSnap.id);
-          //console.log("Document data:", docSnap.data());
           const productDetail = {id: docSnap.id, ...docSnap.data()}
           setProductDetail(productDetail)
         } else {

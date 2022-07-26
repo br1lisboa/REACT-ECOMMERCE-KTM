@@ -14,7 +14,6 @@ const ShopProvider = ({ children }) => {
 		} else {
 			setCart([...cart, {...producto, quantity: cantidad}])
 		}
-		//Esta funcion va a agregar un item al carrito.
 	}
 
 	const deletItem = (id) => {

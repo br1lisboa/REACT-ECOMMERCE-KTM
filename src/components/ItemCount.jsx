@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
-/* import Modal from './Modal'; */
 import './styles/ItemCount.css';
+import Swal from 'sweetalert2';
 
 const ItemCount = ({ onConfirm, maxQuantity}) => {
 
 	const [value, setValue] = useState(1);
-	/* const [openModal, setOpenModal] = useState(false); */
 
 	const handleConfirm = () => {
 		if (value <= maxQuantity) {
 			onConfirm(value)
 		} 
 		else {
-			alert("Value > maxQuantity")
+			Swal.fire({
+				icon: 'alert',
+				title: 'Ups, lamentamos el incoveniente.',
+				text: 'Producto fuera de stock'
+			});
 		}
 	};
 
@@ -42,10 +45,6 @@ const ItemCount = ({ onConfirm, maxQuantity}) => {
 			<button className="itemcount-container-buttonadd" onClick={handleConfirm}>
 				Añadir al Carro
 			</button>
-			{/* <button onClick={()=>{setOpenModal(true)}}>
-				Modal
-			</button>
-			<Modal open={openModal} onClose={()=>{setOpenModal(false)}}/> */}
 		</div>
 	);
 }
