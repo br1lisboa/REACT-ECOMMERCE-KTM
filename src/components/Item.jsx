@@ -7,7 +7,7 @@ function Item ( { name, imagen, categoria, precio, id } ) {
   
   const navigation = useNavigate();
 
-  const handleDetail = () => { //Navega hacia el detail
+  const handleDetail = () => {
     navigation(`/detail/${id}`)
   }
 
