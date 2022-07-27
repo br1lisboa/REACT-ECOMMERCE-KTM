@@ -1,3 +1,5 @@
+<p><img align="center" alt="gif" src="https://github.com/br1lisboa/coder_ecommerce_reactjs/blob/master/MotorBike.gif" width="500" height="320" /></p>
+
 # E-COMMERCE WHIT REACTJS - MOTORBIKESHOP 
 
 ### Ecommerce with connection to database, firebase.
