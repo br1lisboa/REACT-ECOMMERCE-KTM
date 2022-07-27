@@ -33,7 +33,7 @@
 }
 
 .cartitem-detail h3 {
-    font-size: 25px;
+    font-size: var(--tamaño-letra-medio);
     text-align: center;
     width: 80%;
     padding: 10px;
@@ -43,11 +43,20 @@
     align-items: center;
 }
 
+.gray-details-title {
+    font-size: var(--tamaño-letra-medio);
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--color-secundario-letra);
+    padding: 20px;
+}
 .cartitem-detail h4 {
     text-align: right;
     width: 80%;
     letter-spacing: 2px;
     font-weight: 500;
+    font-size: var(--tamaño-letra-chico);
 }
 
 .cartitem-detail span {

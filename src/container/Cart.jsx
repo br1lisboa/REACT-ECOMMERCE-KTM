@@ -50,7 +50,7 @@ function Cart() {
         </div>
       ) : (
         <div className="container-ci">
-          <h3 className="gray-details"> Detalles de la compra</h3>
+          <h3 className="gray-details-title"> Detalles de la compra</h3>
           {cart.map((producto) => (
             <div className="cartitem-container" key={producto.id}>
               <div className="cartitem-detail">

@@ -1,7 +1,21 @@
+:root {
+  /* COLORES */
+  --color-principal: #000;
+  --color-secundario: #E74C2B;
+  --color-principal-letra: gainsboro;
+  --color-secundario-letra: #5F5958;
+
+  /* TAMAÑOS LETRAS */
+  --tamaño-letra-grande: 32px;
+  --tamaño-letra-medio: 24px;
+  --tamaño-letra-chico:18px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container-principal {
