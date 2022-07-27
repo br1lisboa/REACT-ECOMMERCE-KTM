@@ -1,6 +1,5 @@
 .container-detail {
   width: 80%;
-  /* height: 70vh; */
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -73,24 +72,24 @@
 
 .terminar-compra {
   width: 300px;
-	height: auto;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 15px;
-	background-color: black;
-	color: whitesmoke;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background-color: black;
+  color: whitesmoke;
   cursor: pointer;
   margin: 30px;
   font-size: 18px;
 }
 
-.terminar-compra:hover{
+.terminar-compra:hover {
   background-color: #E74C2B;
   transition: 1s;
 }
 
-.gray-detls{
+.gray-detls {
   font-weight: 300;
   letter-spacing: 1px;
   color: #5F5958;
@@ -116,4 +115,3 @@ p {
   font-size: var(--tamaño-letra-chico);
   text-align: justify;
 }
-

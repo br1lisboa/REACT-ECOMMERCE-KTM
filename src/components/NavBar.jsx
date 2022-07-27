@@ -6,9 +6,12 @@ import { Link } from "react-router-dom";
 function NavBar() {
   return (
     <div>
-		<div className="motor-container">
-			<h1 className="motor-h1"><span className="motor">Mo</span>tor Bike<span className="motor">Sh</span>op</h1>
-		</div>
+      <div className="motor-container">
+        <h1 className="motor-h1">
+          <span className="motor">Mo</span>tor Bike
+          <span className="motor">Sh</span>op
+        </h1>
+      </div>
       <div className="contenedor-navbar">
         <ul className="navbar">
           <li>

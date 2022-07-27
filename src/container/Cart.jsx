@@ -1,4 +1,4 @@
-import React, { useContext, /* useRef */ } from "react";
+import React, { useContext /* useRef */ } from "react";
 import { Shop } from "../context/ShopProvider";
 import "./styles/Cart.css";
 import { Link } from "react-router-dom";
@@ -37,7 +37,7 @@ function Cart() {
       totalInCart()
     );
     guardarOrden(cart, orden);
-    clearCart()
+    clearCart();
   };
 
   return (
@@ -46,7 +46,9 @@ function Cart() {
         <div className="mensaje-carrito-vacio">
           <h3>No hay productos en el carrito!</h3>
           <h3>Vuelva al Inicio para continuar comprando!</h3>
-          <Link to="/" className="link">Ir al <span> HOME </span></Link>
+          <Link to="/" className="link">
+            Ir al <span> HOME </span>
+          </Link>
         </div>
       ) : (
         <div className="container-ci">
@@ -54,10 +56,7 @@ function Cart() {
           {cart.map((producto) => (
             <div className="cartitem-container" key={producto.id}>
               <div className="cartitem-detail">
-                <h3>
-                  {" "}
-                  {producto.title} 
-                </h3>
+                <h3> {producto.title}</h3>
                 <h4>Cantidad: {producto.quantity}</h4>
                 <h4>Precio: ${producto.price}</h4>
                 <h4>SubTotal: ${producto.quantity * producto.price}</h4>
@@ -76,13 +75,19 @@ function Cart() {
             </div>
           ))}
           <div>
-            <p className="total-compra">Total de la compra: <span>$$ {totalInCart()} USD.</span></p>
+            <p className="total-compra">
+              Total de la compra: <span>$$ {totalInCart()} USD.</span>
+            </p>
           </div>
 
-          <div className="form-full" >
-            <h4 className="form-title">Rellena los datos para finalizar la compra.</h4>
+          <div className="form-full">
+            <h4 className="form-title">
+              Rellena los datos para finalizar la compra.
+            </h4>
             <form className="form-container" onSubmit={handleSubmit}>
-              <label htmlFor="name" className="form-solit">Nombre y apellido</label>
+              <label htmlFor="name" className="form-solit">
+                Nombre y apellido
+              </label>
               <input
                 type="text"
                 name="name"
@@ -92,11 +97,15 @@ function Cart() {
               />
               <div className="error-container">
                 {errors.name && touched.name && (
-                  <p className="form-error">Debes ingresar nombre y apellido correcto.</p>
+                  <p className="form-error">
+                    Debes ingresar nombre y apellido correcto.
+                  </p>
                 )}
               </div>
 
-              <label htmlFor="email" className="form-solit">Email</label>
+              <label htmlFor="email" className="form-solit">
+                Email
+              </label>
               <input
                 type="email"
                 name="email"
@@ -110,7 +119,9 @@ function Cart() {
                 )}
               </div>
 
-              <label htmlFor="repeatEmail" className="form-solit">Repetir email</label>
+              <label htmlFor="repeatEmail" className="form-solit">
+                Repetir email
+              </label>
               <input
                 type="email"
                 name="repeatEmail"
@@ -126,7 +137,9 @@ function Cart() {
                 )}
               </div>
 
-              <label htmlFor="tel" className="form-solit">Celular</label>
+              <label htmlFor="tel" className="form-solit">
+                Celular
+              </label>
               <input
                 type="tel"
                 name="tel"

@@ -52,7 +52,7 @@ li {
 	font-size: var(--tamaño-letra-medio);
 }
 
-li:hover, 
+li:hover,
 .li:hover {
 	color: #E74C2B;
 }
