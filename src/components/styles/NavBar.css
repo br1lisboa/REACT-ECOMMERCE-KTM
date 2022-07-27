@@ -1,6 +1,6 @@
 .contenedor-navbar {
 	width: 100%;
-	height: 6vh;
+	height: auto;
 	background-color: black;
 	display: flex;
 	justify-content: space-between;
@@ -14,26 +14,23 @@
 
 .motor-container {
 	width: 100%;
-	height: 10vh;
+	height: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background-color: var(--color-principal);
 	color: var(--color-principal-letra);
 	letter-spacing: 5px;
-	font-size: 28px;
+	font-size: var(--tamaño-letra-grande);
 	padding: 5px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	border-bottom: solid 1px var(--color-secundario);
-	font-size: var(--tamaño-letra-grande);
 }
 
 .motor {
 	color: var(--color-secundario);
 }
-
-
 
 .navbar {
 	display: flex;

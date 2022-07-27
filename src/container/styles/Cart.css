@@ -175,6 +175,14 @@ h4{
     padding: 20px;
 }
 
+.form-full {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
 .form-solit {
     font-weight: 300;
     letter-spacing: 1px;
@@ -192,4 +200,8 @@ h4{
     letter-spacing: 1px;
     color: #5F5958;
     font-size: 25px;
+}
+
+input {
+    width: 80%;
 }
