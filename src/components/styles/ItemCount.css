@@ -45,3 +45,7 @@
 	font-size: 1.2rem;
 }
 
+.itemcount-container-buttonadd:hover {
+	background-color: #E74C2B;
+	transition: 1s;
+}

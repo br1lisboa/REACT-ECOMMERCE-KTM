@@ -45,7 +45,8 @@ function Cart() {
       {cart.length === 0 ? (
         <div className="mensaje-carrito-vacio">
           <h3>No hay productos en el carrito!</h3>
-          <Link to="/">Ir al inicio</Link>
+          <h3>Vuelva al Inicio para continuar comprando!</h3>
+          <Link to="/" className="link">Ir al <span> HOME </span></Link>
         </div>
       ) : (
         <div className="container-ci">
@@ -75,11 +76,11 @@ function Cart() {
             </div>
           ))}
           <div>
-            <p className="total-compra">Total de la compra: {totalInCart()}</p>
+            <p className="total-compra">Total de la compra: <span>$$ {totalInCart()} USD.</span></p>
           </div>
 
           <div className="form-full" >
-            <h4 className="form-title">Rellena los datos para finalizar la compra</h4>
+            <h4 className="form-title">Rellena los datos para finalizar la compra.</h4>
             <form className="form-container" onSubmit={handleSubmit}>
               <label htmlFor="name" className="form-solit">Nombre y apellido</label>
               <input
@@ -88,7 +89,6 @@ function Cart() {
                 value={values.name}
                 onBlur={handleBlur}
                 onChange={handleChange}
-                /* ref={nameRef} */
               />
               <div className="error-container">
                 {errors.name && touched.name && (
@@ -103,7 +103,6 @@ function Cart() {
                 value={values.email}
                 onBlur={handleBlur}
                 onChange={handleChange}
-                /* ref={mailRef} */
               />
               <div className="error-container">
                 {errors.email && touched.email && (
@@ -118,7 +117,6 @@ function Cart() {
                 value={values.repeatEmail}
                 onBlur={handleBlur}
                 onChange={handleChange}
-                /* ref={repeatMailRef} */
               />
               <div className="error-container">
                 {errors.repeatEmail && touched.repeatEmail && (
@@ -135,7 +133,6 @@ function Cart() {
                 value={values.tel}
                 onBlur={handleBlur}
                 onChange={handleChange}
-                /* ref={telRef} */
               />
               <div className="error-container">
                 {errors.tel && touched.tel && (

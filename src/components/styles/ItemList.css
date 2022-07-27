@@ -7,6 +7,25 @@
     flex-wrap: wrap;
     padding-top: 30px;
     padding-bottom: 30px;
+    margin: auto;
+}
+
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: #5F5958;
+}
+
+.d-det h2 {
+    color: black;
+    width: 100%;
+    margin: 10px;
+    text-align: right;
 }
 
 .generic {

@@ -39,6 +39,8 @@ function ItemList () {
   }, [params]);
 
   return (
+    <div>
+      <h2>Solo maquinas de calidad superior...</h2>
     <div className="product-list-container">
       {
         productList.length ? ( 
@@ -63,6 +65,7 @@ function ItemList () {
           <Loading/>
         ) 
       }
+    </div>
     </div>
   );
 }

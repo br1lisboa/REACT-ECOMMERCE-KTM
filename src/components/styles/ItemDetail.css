@@ -39,11 +39,12 @@
 }
 
 .d-det h3 {
-  margin-bottom: 15px;
+  margin-bottom: 18px;
   color: red;
   font-weight: 500;
   text-align: right;
-  width: 70%;
+  width: 60%;
+  font-size: 24px;
 }
 
 .d-det p {
@@ -80,8 +81,21 @@
   font-size: 18px;
 }
 
+.terminar-compra:hover{
+  background-color: #E74C2B;
+  transition: 1s;
+}
+
 .gray-details {
   font-weight: 300;
   letter-spacing: 1px;
   color: #5F5958;
 }
+
+.gray-details-p {
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #5F5958;
+  font-size: 18px;
+}
+

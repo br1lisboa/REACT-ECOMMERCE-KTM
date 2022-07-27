@@ -55,4 +55,14 @@ li:hover,
 .baner {
 	width: 100%;
 	height: 60vh;
+	animation: movimiento 60s infinite linear alternate;
+	background-size: 200%;
+}
+
+@keyframes movimiento {
+	from {
+		background-position: top right;
+	}  to {
+		background-position: bottom left;
+	}
 }
